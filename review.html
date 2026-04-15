@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      :root {
+        --card-bg: #c1dcdc;
+        --dark-green: #2d5527;
+        --text-main: #1e1e1e;
+        --text-secondary: #666666;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        background: #fff;
+        overflow-x: hidden;
+      }
+
+      .section-testimonials {
+        padding: 100px 0;
+        background-color: #ffffff;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header styling */
+      .header-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 60px;
+      }
+
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0;
+        color: var(--text-main);
+      }
+
+      /* Swiper Setup */
+      .swiper {
+        width: 100%;
+        padding: 80px 0 !important;
+        overflow: visible !important;
+      }
+
+      .swiper-slide {
+        width: 800px;
+        transition: all 0.4s ease;
+        filter: blur(1px);
+        opacity: 0.5;
+      }
+
+      .swiper-slide-active {
+        filter: blur(0);
+        opacity: 1;
+      }
+
+      /* Testimonial Card */
+      .card {
+        background: var(--card-bg);
+        height: 330px;
+        border-radius: 12px;
+        padding: 60px 80px;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .quote-mark {
+        font-size: 120px;
+        position: absolute;
+        top: -20px;
+        left: 30px;
+        color: var(--text-main);
+        opacity: 0.08;
+        font-family: serif;
+      }
+
+      .testimonial-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #444;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .user-block {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Floating Photo Effect */
+      .user-photo {
+        position: absolute;
+        bottom: 0;
+        left: 40px;
+        height: 275px; /* Виступає зверху і знизу */
+        object-fit: contain;
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      .user-details {
+        margin-left: 160px;
+      }
+
+      .user-name {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0;
+        color: var(--text-main);
+      }
+      .user-role {
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin: 0;
+      }
+
+      .rating-box {
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .star-icon {
+        color: #000;
+      }
+
+      /* Custom Pagination (Lines) */
+      .swiper-pagination {
+        position: static !important;
+        width: auto !important;
+        display: flex;
+        gap: 10px;
+      }
+      .swiper-pagination-bullet {
+        width: 35px;
+        height: 5px;
+        border-radius: 10px;
+        background: #e0e0e0 !important;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      .swiper-pagination-bullet-active {
+        background: var(--dark-green) !important;
+        width: 60px;
+      }
+
+      /* Mobile adaptation */
+      @media (max-width: 850px) {
+        .swiper-slide {
+          width: 90vw;
+        }
+        .card {
+          padding: 40px 30px;
+          height: auto;
+          min-height: 350px;
+        }
+        .user-photo {
+          height: 280px;
+          left: 10px;
+        }
+        .user-details {
+          margin-left: 100px;
+        }
+        .title {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section-testimonials">
+      <div class="container">
+        <div class="header-box">
+          <h2 class="title">What customers say about<br />GREEMIND?</h2>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card">
+                <span class="quote-mark">“</span>
+                <p class="testimonial-text">
+                  "I'm obsessed with my new Monstera! It arrived so healthy and
+                  has already put out two new leaves. The packaging was
+                  eco-friendly too."
+                </p>
+                <div class="card-footer">
+                  <div class="user-block">
+                    <img
+                      src="/img/review/man.png"
+                      class="user-photo"
+                      alt="John"
+                    />
+                    <div class="user-details">
+                      <h4 class="user-name">John Doe</h4>
+                      <p class="user-role">Youtuber</p>
+                    </div>
+                  </div>
+                  <div class="rating-box">
+                    <span class="star-icon">★</span> 4.5
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card">
+                <span class="quote-mark">“</span>
+                <p class="testimonial-text">
+                  "The best place to buy plants online. The customer service
+                  team helped me pick the perfect low-light plants for my home
+                  office."
+                </p>
+                <div class="card-footer">
+                  <div class="user-block">
+                    <img
+                      src="/img/review/women.png"
+                      class="user-photo"
+                      alt="Anna"
+                    />
+                    <div class="user-details">
+                      <h4 class="user-name">Anna Smith</h4>
+                      <p class="user-role">Designer</p>
+                    </div>
+                  </div>
+                  <div class="rating-box">
+                    <span class="star-icon">★</span> 5.0
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      window.addEventListener("load", function () {
+        const swiper = new Swiper(".mySwiper", {
+          slidesPerView: "auto",
+          spaceBetween: 60,
+          loop: true,
+          grabCursor: true,
+          centeredSlides: false,
+          speed: 800,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
